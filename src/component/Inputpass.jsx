@@ -21,9 +21,9 @@ const Inputpass = () => {
     });
   }, [password]);
 
-  const generateButton = ()=>{
-    passwordGenerator()
-  }
+  const generateButton = () => {
+    passwordGenerator();
+  };
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
@@ -43,7 +43,7 @@ const Inputpass = () => {
   }, [length, numberAllowed, symbolAllowed, passwordGenerator]);
   return (
     <>
-      <div className="flex flex-row shadow-md rounded-lg overflow-hidden my-8 mb-0 w-full max-w-md mx-auto">
+      <div className="flex flex-row shadow-md rounded-lg overflow-hidden my-8 mb-0 w-full max-w-md mx-auto ">
         <input
           type="text"
           value={password}
@@ -71,11 +71,14 @@ const Inputpass = () => {
       >
         {/* Generate button */}
         <button
-            onClick={generateButton}
+          onClick={generateButton}
           title="Generate"
-          className="outline-none hover:cursor-pointer text-2xl text-white py-2.5 w-full flex justify-center items-center"
+          className="outline-none hover:cursor-pointer text-2xl text-white py-2.5 w-full flex justify-center items-center
+             active:scale-95 active:bg-opacity-80 transition-all duration-150 ease-in-out
+             hover:scale-105 hover:shadow-lg hover:brightness-110
+             transform active:transform-gpu"
         >
-          <LuRefreshCw />
+          <LuRefreshCw className="transition-transform duration-300 active:rotate-180" />
         </button>
       </div>
 
@@ -121,6 +124,30 @@ const Inputpass = () => {
           </label>
         </div>
       </div>
+      <style>
+        {`
+          .animate-fade-in {
+            animation: fadeIn 1s ease;
+          }
+          .animate-fade-in-down {
+            animation: fadeInDown 1s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          @keyframes fadeInDown {
+            from {
+              opacity: 0;
+              transform: translateY(-40px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}
+      </style>
     </>
   );
 };
