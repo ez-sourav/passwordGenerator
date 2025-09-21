@@ -43,23 +43,23 @@ const Inputpass = () => {
   }, [length, numberAllowed, symbolAllowed, passwordGenerator]);
   return (
     <>
-      <div className="flex flex-row shadow-md rounded-lg overflow-hidden my-8 mb-0 w-full max-w-md mx-auto ">
+      <div className="flex flex-col sm:flex-row shadow-md rounded-lg overflow-hidden my-8 mb-0 w-full max-w-md mx-auto">
         <input
           type="text"
           value={password}
-          className="flex-1 py-3 px-4 bg-white text-gray-700 text-lg outline-none border-2 border-gray-200 focus:border-blue-500 transition-colors text-center sm:text-left"
+          className="py-3 px-4 bg-white text-gray-700 text-lg outline-none border-2 border-gray-200 focus:border-blue-500 transition-colors text-center sm:text-left flex-1"
           placeholder="Password"
           readOnly
           ref={passwordRef}
         />
-        {/* Copy Button  */}
+        {/* Copy Button for all devices */}
         <button
           title="Copy"
           onClick={copyPasswordClipbord}
           className="outline-none text-2xl bg-blue-600 hover:bg-blue-700
-                 text-white px-5 py-3 rounded-r-lg font-semibold 
+                 text-white px-5 py-3 rounded-b-lg sm:rounded-r-lg sm:rounded-b-none font-semibold 
                  transition-colors duration-300 shadow-md 
-                 flex justify-center items-center hover:cursor-pointer"
+                 flex justify-center items-center hover:cursor-pointer w-full sm:w-auto"
         >
           <RiFileCopyLine />
         </button>
@@ -67,7 +67,7 @@ const Inputpass = () => {
 
       <div
         title="Generate"
-        className="my-5  bg-emerald-500 text-center rounded-lg  w-full max-w-md mx-auto"
+        className="my-5 bg-emerald-500 text-center rounded-lg w-full max-w-md mx-auto"
       >
         {/* Generate button */}
         <button
@@ -82,7 +82,7 @@ const Inputpass = () => {
         </button>
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-sm gap-y-4 sm:gap-x-4 w-full max-w-md mx-auto">
+      <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center text-sm gap-y-4 sm:gap-x-4 w-full max-w-md mx-auto">
         {/* Length */}
         <div className="flex flex-col items-center sm:items-start gap-y-2 w-full sm:w-auto">
           <input
@@ -91,17 +91,17 @@ const Inputpass = () => {
             max={30}
             value={length}
             className="cursor-pointer w-full sm:w-40"
-            onChange={(e) => setLength(e.target.value)}
+            onChange={(e) => setLength(Number(e.target.value))}
           />
           <label className="text-lg">Length: {length}</label>
         </div>
 
         {/* Numbers */}
-        <div className="flex items-center gap-x-2">
+        <div className="flex items-center gap-x-2 w-full sm:w-auto justify-center sm:justify-start">
           <input
             className="w-4 h-4 hover:cursor-pointer"
             type="checkbox"
-            defaultChecked={numberAllowed}
+            checked={numberAllowed}
             id="numberInput"
             onChange={() => setNumberAllowed((prev) => !prev)}
           />
@@ -111,11 +111,11 @@ const Inputpass = () => {
         </div>
 
         {/* Symbols */}
-        <div className="flex items-center gap-x-2">
+        <div className="flex items-center gap-x-2 w-full sm:w-auto justify-center sm:justify-start">
           <input
-            className="w-4 h-4 hover:cursor-pointer "
+            className="w-4 h-4 hover:cursor-pointer"
             type="checkbox"
-            defaultChecked={symbolAllowed}
+            checked={symbolAllowed}
             id="symbolInput"
             onChange={() => setSymbolAllowed((prev) => !prev)}
           />
