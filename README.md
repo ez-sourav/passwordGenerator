@@ -1,16 +1,17 @@
 # 🔐 Password Generator
 
-A modern **Password Generator App** built using **React.js**.  
+A modern **Password Generator App** built using **React.js** with easy customization and a clean UI.
+
 It includes:
 
-- Adjustable password length
-- Include numbers
-- Include symbols
-- Refresh / Generate button
-- Copy to clipboard button
+- Adjustable password length  
+- Include numbers  
+- Include symbols  
+- Refresh / Generate button  
+- Copy to clipboard button  
 
-👉 **Live Demo:**  
-<a href="https://ez-sourav.github.io/passwordGenerator/" target="_blank">Click here to open Password Generator</a>
+👉 **Live Demo:** https://ez-sourav.github.io/passwordGenerator/  
+*(Press Ctrl + Click to open in a new tab)*
 
 ---
 
@@ -19,7 +20,9 @@ It includes:
 ✔ Built with React (hooks)  
 ✔ Real-time password generation  
 ✔ Copy to clipboard  
-✔ Regenerate button  
+✔ Regenerate / Refresh button  
 ✔ Numbers toggle  
 ✔ Symbols toggle  
 ✔ Fully responsive UI  
+✔ Clean and simple design  
+
