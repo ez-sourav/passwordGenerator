@@ -9,7 +9,8 @@ It includes:
 - Refresh / Generate button
 - Copy to clipboard button
 
-Live Demo: **https://ez-sourav.github.io/passwordGenerator/**
+👉 **Live Demo:**  
+<a href="https://ez-sourav.github.io/passwordGenerator/" target="_blank">Click here to open Password Generator</a>
 
 ---
 
